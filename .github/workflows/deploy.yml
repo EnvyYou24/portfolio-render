@@ -27,6 +27,9 @@ jobs:
     # If you ever add a testing framework (like Jest) later, you uncomment this:
     - name: Run Tests
       run: npm test
+      env:
+        # This provides a dummy URI just for the test environment
+        MONGO_URI: mongodb://localhost:27017/test-db
 
     - name: Trigger Render Deployment
       run: |
