@@ -25,8 +25,13 @@ jobs:
       run: npm install
 
     # If you ever add a testing framework (like Jest) later, you uncomment this:
-    # - name: Run Tests
-    #   run: npm test
+    - name: Run Tests
+      run: npm test
 
     - name: Trigger Render Deployment
-      run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+      run: |
+        if [ -z "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+          echo "Error: RENDER_DEPLOY_HOOK is not set in GitHub Secrets."
+          exit 1
+        fi
+        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
