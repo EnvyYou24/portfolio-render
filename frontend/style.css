@@ -16,7 +16,7 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: rgb(216, 18, 18);
 }
 
 /* TRANSITION */
@@ -46,9 +46,9 @@ nav {
 }
 
 a {
-  color: black;
+  color: rgb(0, 15, 150);
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: rgb(17, 233, 6);
 }
 
 a:hover {
